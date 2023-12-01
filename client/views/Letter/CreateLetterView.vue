@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import router from "../../router";
 import { useDiaryStore } from "../../stores/diary";
-import { formatEntryDate } from "../../utils/formatDate";
 
 const { createDiary } = useDiaryStore();
 let content = ref("");
@@ -35,20 +34,20 @@ async function submitForm() {
             <div class="delay">
               <p class="form-subtitle">Delay</p>
               <label class="switch">
-                <input type="checkbox" v-model="delay">
+                <input type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
 
             <div class="delaytime">
               <p class="form-subtitle">Delay Date</p>
-              <input class="input-bar" type="date" v-model.trim="delaydate" id="delay_date" placeholder="" required />
+              <input class="input-bar" type="date"  id="delay_date" placeholder="" required />
             </div>
 
             <div class="delay">
               <p class="form-subtitle">Time Capsule</p>
               <label class="switch">
-                <input type="checkbox" v-model="timecapsule">
+                <input type="checkbox" >
                 <span class="slider round"></span>
               </label>
             </div>
@@ -57,7 +56,7 @@ async function submitForm() {
           <div class="right">
             <div class="delaytime">
               <p class="form-subtitle">Receiver</p>
-              <input type="text" class="contact" v-model.trim="receiver" id="receiver" placeholder="Enter receiver's name" required />
+              <input type="text" class="contact"  id="receiver" placeholder="Enter receiver's name" required />
             </div>
           </div>
         </fieldset>
